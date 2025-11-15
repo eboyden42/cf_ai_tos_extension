@@ -1,12 +1,37 @@
 <!-- The popup's size must be between 25x25 and 800x600 pixels. -->
+<!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Righteous&display=swap" rel="stylesheet">
+    </head>
+    <header class="header">
+        <h4 class="title righteous">ToS;DR</h4>
+        <img src="images/image.png" class="logo"/>
+    </header>
     <body>
-        <div>
-            <p>Highlight your suspicious agreement and click scan.</p>
-            <button id="tosdr-btn">
-                SCAN
-            </button>
-            <h1 id="output"></h1>
+        <div class="content-div">
+            <div class="initial-message-section">
+                <h1>Let me do the reading...</h1>
+                <p class="instructions">Highlight your suspicious agreement and click <span>scan</span>.</p>
+                <button id="tosdr-btn" class="button-87">
+                    SCAN
+                </button>
+            </div>
+            <div class="loading-section">
+                <div class="loading-circle"></div>
+                <h3>Looking for <span id="loading-item">suspicious clauses...</span></h3>
+            </div>
+            <div class="ai-res-section">
+                <h2>This contract signs off about</h2>
+                <h1 id="output"></h1>
+                <h2>of your soul.</h2>
+                <p id="summary"></p>
+                <p id="key-findings"></p>
+            </div>
         </div>
+        <script src="popup.js"></script>
     </body>
 </html>

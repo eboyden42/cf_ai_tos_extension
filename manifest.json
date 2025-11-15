@@ -4,17 +4,14 @@
     "description": "A chrome extension that uses AI to scan Terms of Service (ToS) agreements and looks for suspicous phrasing to protect your digital autonomy, transparency, and privacy.",
     "version": "1.0",
     "icons": {
-        "48": "images/ToS;DR48.png",
-        "128": "images/ToS;DR48.png"
+        "48": "images/image.png",
+        "128": "images/image.png"
     },
     "action": {
         "default_icon": {
-            "16": "images/ToS;DR16.png"
+            "16": "images/image.png"
         },
         "default_popup": "popup.html"
     },
-    "permissions": ["activeTab", "scripting"],
-    "background": {
-        "service_worker": "background.js"
-    }
+    "permissions": ["activeTab", "scripting"]
 }
