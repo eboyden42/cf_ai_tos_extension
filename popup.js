@@ -22,6 +22,11 @@ const soulFillEl = document.getElementById("soul-fill");
 const soulPercentageEl = document.getElementById("soul-percentage");
 const scanAgainBtnEl = document.getElementById("scan-again-btn");
 
+// error handling
+const errorSectionEl = document.querySelector(".error-section");
+errorSectionEl.style.display = "none";
+const errorMessageEl = document.getElementById("error-message");
+const errorScanAgainBtnEl = document.getElementById("error-scan-again-btn");
 
 // main process scan listener
 scanBtnEl.addEventListener("click", async () => {
@@ -74,7 +79,9 @@ scanBtnEl.addEventListener("click", async () => {
                 } else {
                     console.log("Response not OK");
                     console.log(JSON.stringify(analysis));
-                    outEl.textContent = analysis.error;
+                    errorMessageEl.textContent = analysis.error || "An unknown AI error occured.";
+                    aiContentEl.style.display = "none";
+                    errorSectionEl.style.display = "flex";
                 }
             }
         }
@@ -92,7 +99,6 @@ document.getElementById("reset").addEventListener("click", () => {
 
 // accept ToS button
 document.getElementById("accept-btn").addEventListener("click", () => {
-    // switch to soul meter view
     aiContentEl.style.display = "none";
     soulContentEl.style.display = "flex";
     // update 
@@ -104,18 +110,25 @@ document.getElementById("accept-btn").addEventListener("click", () => {
 
 // reject ToS button
 document.getElementById("reject-btn").addEventListener("click", () => {
-    // switch to soul meter view
     aiContentEl.style.display = "none";
     soulContentEl.style.display = "flex";
 });
 
 // scan again button
 scanAgainBtnEl.addEventListener("click", () => {
-    // switch to initial view
     soulContentEl.style.display = "none";
     initialContentEl.style.display = "flex";
 });
 
+// error scan again button
+errorScanAgainBtnEl.addEventListener("click", () => {
+    errorSectionEl.style.display = "none";
+    initialContentEl.style.display = "flex";
+});
+
+
+
+// send tos to cloudflare ai
 async function analyseToS(text) {
     const res = await fetch("https://proud-sound-743c.eboyden42.workers.dev/", {
         method: "POST",
@@ -128,6 +141,7 @@ async function analyseToS(text) {
     return data;
 }
 
+// handles the loading animation
 function loadingAnimation(loadingItemEl) {
     const loadingItems = ["suspicious clauses...", "data selling...", "privacy violations...", "dark patterns...", "legal jargon...", "the holy gail...", "love...", "waldo..."];
 
@@ -138,6 +152,7 @@ function loadingAnimation(loadingItemEl) {
     }, 2000);
 }
 
+// initialize storage for soul values
 async function initSoul() {
     chrome.storage.local.get(["soul"], (data) => {
         if (data.soul === undefined) {
@@ -152,6 +167,7 @@ async function initSoul() {
     });
 }
 
+// update soul value in storage
 function updateSoul(amount, callback) {
     chrome.storage.local.get(["soul"], (data) => {
         let newSoul = data.soul + amount;
