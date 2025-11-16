@@ -4,7 +4,7 @@
 ToS;DR (short for Terms of Service Didn't Read) is an AI chrome extension that lets you scan Terms of Service agreements for suspicious phrasing to protect your digital autonomy, transparency, and privacy. 
 
 ## Introduction and overview
-**The problem:**
+**The problem: Nobody reads Terms of Service agreements**
 
 Who even reads those long droning (ToS) agreements anymore? I know I sure don't. And turns out neither do [87%](https://www.pewresearch.org/internet/2019/11/15/americans-attitudes-and-experiences-with-privacy-policies-and-laws/)  of Americans, although if we're being honest that's an underestimate.
 
@@ -16,11 +16,11 @@ The one of the far right is Instagram, with estimated reading time of 86 minutes
 
 On April Fools day in 2010 the company Gamestation [ran an experiment](https://www.pinsentmasons.com/out-law/news/nobody-reads-terms-and-conditions-its-official) on this topic by inserting a clause in their terms of service that granted them a "non transferable option to claim, for now and for ever more, your immortal soul". Of the 7,500 customers who made a purchase on that day, none of them saw the clause.
 
-**The solution:**
+**The solution: Use AI to scan for malicious clauses**
 
-AI is great at rapidly processing amounts of natural language data that humans cannot. Reading the entire Instagram ToS is a matter of seconds for an AI model (although the entire agreement all at once is currently too much for my free tier LLM), and finding malicious clauses hidden in legal jargon is a trivial task.
+AI is great at rapidly processing large amounts of natural language data. Reading the entire Instagram ToS is a matter of seconds for an AI model, and finding malicious clauses hidden in legal jargon is a trivial task.
 
-What we need is an easy way to send agreements to a specialized AI model for grading, and production of a summary of key points. And we need this solution to be available on any website. The solution I came up with is a chrome extension.
+What we need is an easy way to send agreements to a specialized AI model for grading. The AI can look for odd clauses or privacy concerns and then create a summary of key points for users to read. Since this solution needs to be easily accessible from any website, I decided to create a chrome extension.
 
 ## Setup and installation
 Note that you will need to be using the Chrome web browser.
@@ -46,8 +46,6 @@ The output of the model is a grade from 0 to 100, where 100 is the best user agr
 **The soul meter:**
 
 To make the app more fun (and add a callback to the [Gamestation experiment](https://www.pinsentmasons.com/out-law/news/nobody-reads-terms-and-conditions-its-official)) I decided to rate each ToS agreement by the estimated percentage of your soul you give up if you sign. A good user agreement might only require you to sign over 15% of your soul, whereas a bad one might require 85%. To calculate this number I just take the complement of the more traditional grade that the LLM produces.
-
-To read more on losing your soul in an agreement this check out the Wikipedia page on [deals with the devil](http://en.wikipedia.org/wiki/Deal_with_the_Devil).
 
 After a score is produced, the extension also allows you to input whether you accept or reject the agreement, and tracks what percentage of your soul you have remaining.
 
