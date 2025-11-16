@@ -1,10 +1,7 @@
-# Terms of service scanning AI Chrome extension
+# Terms of Service (ToS) scanning AI Chrome extension
 
+## Introdcution and overview
+
+Who even reads those long droning (ToS) agreements anymore? I know I sure don't. When I sign up for the McDonald's app its because I want a Spicy McChicken, and the only way to get it is to click agree. So I do. And turns out so do [87%](https://www.pewresearch.org/internet/2019/11/15/americans-attitudes-and-experiences-with-privacy-policies-and-laws/)  of Americans
 [inspiration](https://mymodernmet.com/social-media-policy-infographics-dima-yarovinsky/)
 
-Planning:
-
-popup.html shows on click, tells user to hightligh ToS and then click scan
-on scan content.js fetches highlighted text (the ToS), checks if it's non-empty and then sends it to cloudflare AI
-Cloudflare AI logs usage, sends back any suspicious content, along with an estimated percentage of your soul you give up when you agree
-Display this information in the popup.html
