@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "ToS;DR",
-    "description": "A chrome extension that uses AI to scan Terms of Service (ToS) agreements and looks for suspicous phrasing to protect your digital autonomy, transparency, and privacy.",
+    "description": "A chrome extension that uses AI to scan Terms of Service (ToS) agreements and looks for suspicious phrasing to protect your digital autonomy, transparency, and privacy.",
     "version": "1.0",
     "icons": {
         "48": "images/logodr.png",
