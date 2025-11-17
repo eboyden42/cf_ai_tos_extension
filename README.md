@@ -58,6 +58,7 @@ Here is a list of ToS agreements (and other types of documents) that I tried the
 2. [Google Privacy and Terms](https://policies.google.com/terms?hl=en-US)
 3. [Squarespace Terms of Service](https://www.squarespace.com/terms-of-service)
 4. [iTunes Terms and Conditions](https://www.apple.com/legal/internet-services/itunes/us/terms.html)
+5. [Cloudflare Candidate Privacy Notice](https://www.cloudflare.com/candidate-privacy-notice/) (Scores very low on the soul meter! Well done Cloudflare!) 
 
 For fun you can try scanning the section of the Gamestation agreement I mentioned earlier:
 
